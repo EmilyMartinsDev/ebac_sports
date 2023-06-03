@@ -15,7 +15,7 @@ const favoritoSlice = createSlice({
   reducers: {
     addFavorito: (state, action: PayloadAction<Produto>) => {
       const favorito = action.payload
-      if (state.items.find((p) => p.id !== favorito.id)) {
+      if (state.items.find((p) => p.id === favorito.id)) {
         const retiraProduto = state.items.filter((p) => p.id !== favorito.id)
         state.items = []
         retiraProduto.map((p) => state.items.push(p))
